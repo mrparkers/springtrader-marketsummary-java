@@ -29,7 +29,7 @@ pipeline {
         container('skaffold') {
           unstash 'build'
           sh "skaffold deploy -a image.json -n ${env.stagingNamespace}"
-          stageMessage "Successfully deployed to staging:\nspringtrader-${env.product}.${env.stagingDomain}/spring-nanotrader-services/api/marketSummary"
+          stageMessage "Successfully deployed to staging:\nmarketsummary-java-${env.product}.${env.stagingDomain}/"
         }
       }
     }
@@ -65,7 +65,7 @@ pipeline {
         container('skaffold') {
           unstash 'build'
           sh "skaffold deploy -a image.json -n ${env.productionNamespace}"
-          stageMessage "Successfully deployed to production:\nspringtrader-${env.product}.${env.productionDomain}/spring-nanotrader-services/api/marketSummary"
+          stageMessage "Successfully deployed to production:\nmarketsummary-java-${env.product}.${env.productionDomain}/"
         }
       }
     }
