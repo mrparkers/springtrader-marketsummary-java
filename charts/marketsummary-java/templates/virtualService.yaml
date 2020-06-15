@@ -7,11 +7,11 @@ spec:
   gateways:
   - istio-system/app-gateway
   hosts:
-  - springtrader-{{ .Values.productName }}.{{ .Values.istioDomain }}
+  - marketsummary-java-{{ .Values.productName }}.{{ .Values.istioDomain }}
   http:
   - match:
     - uri:
-       prefix: /spring-nanotrader-services/api/marketSummary
+       prefix: /
     rewrite:
       uri: /marketSummary
     route:
